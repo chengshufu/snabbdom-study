@@ -165,3 +165,5 @@
 	exec < /dev/tty && ./node_modules/.bin/commithelper prompt --file $1
 ```
 同样，通过问答的方式填写提交信息，并检查。
+
+## 代码规范
