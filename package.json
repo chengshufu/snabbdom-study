@@ -53,5 +53,21 @@
   },
   "engines": {
     "node":">=16"
+  },
+  "lint-staged": {
+    "*.(ts|tsx|js)": "prettier --write"
+  },
+  "commithelper": {
+    "scopeOverrides": {
+      "chore": [
+        "tools",
+        "refactor",
+        "release",
+        "test",
+        "deps",
+        "docs",
+        "examples"
+      ]
+    }
   }
 }
