@@ -8,7 +8,9 @@
     "url": "git+https://github.com/chengshufu/vdom.git"
   },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "release":"npm run test && release-it",
+    "prepare":"husky install"
   },
   "keywords": [
     "vdom",
