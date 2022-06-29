@@ -136,7 +136,8 @@
 		"prepare":"husky install"
 	}
 ```
-`husky`是一个产生`git hook`的库，当提交代码的时候执行一些指令。
+`husky`是一个产生`git hooks`的库，当提交代码的时候执行一些指令。
+ 
 当执行`npm run prepare`的时候，终端会提示：`husky - Git hooks installed`,这样会在项目的根目录下产生一个`.husky`的目录，手动在下边添加四个文件。分别是`.gitignore`、`commit-msg`、`pre-commit`和`prepare-commit-msg`。有了这些文件，就可以在文件中和`commithelper`产生关联了。
 `commit-msg`中的脚本是：
 ```
