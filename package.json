@@ -8,9 +8,16 @@
     "url": "git+https://github.com/chengshufu/vdom.git"
   },
   "scripts": {
-    "test": "test",
-    "release":"npm run test && release-it",
-    "prepare":"husky install"
+    "build": "tsc && npm run bundle:cjs",
+    "bundle:cjs": "rollup build/index.js --format cjs --file build/snabbdom.cjs.js",
+    "examples": "serve .",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "lint": "eslint --ext .ts,.tsx,.js --ignore-path .gitignore .",
+    "unit": "cross-env FILES_PATTERN=\"test/unit/*.ts,test/unit/*.tsx\" karma start karma.conf.js",
+    "release": "npm run test && release-it",
+    "test:ci": "npm test && cross-env ES5=true npm run unit",
+    "test": "npm run build && npm run lint && npm run unit"
   },
   "keywords": [
     "vdom",
@@ -69,5 +76,6 @@
         "examples"
       ]
     }
-  }
+  },
+  "prettier": {}
 }
